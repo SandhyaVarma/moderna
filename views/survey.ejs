@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Moderma - Survey Form</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../img/favicon.png" rel="icon">
+  <link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../vendor/aos/aos.css" rel="stylesheet">
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="/"><span>Moderma</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="active " href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Survey Form</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main" >
+
+    <!-- ======= Our Services Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Survey Form</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>Survery Form</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Our Services Section -->
+  
+    <!-- ======= Service Details Section ======= -->
+    <section class="service-details">
+      <div class="container">
+
+        <form action="/edit/<%= content._id %>" method="post">
+            <div class="row mb-3">
+                <div class="col">
+                  <input type="text" name="name" value="<%= content.name %>" class="form-control" placeholder="name" aria-label="name">
+                </div>
+                <div class="col">
+                  <input type="email" name="email" value="<%= content.email %>" class="form-control" placeholder="email" aria-label="email">
+                </div>
+              </div>
+            <div class="row mb-3">
+                <div class="col">
+                  <input type="number" name="phone" value="<%= content.phone %>" class="form-control" placeholder="Contact no" aria-label="Contact no">
+                </div>
+                <div class="col">
+                  <input type="number" name="age" value="<%= content.age %>" class="form-control" placeholder="age" aria-label="age">
+                </div>
+             </div>
+             <h5>Have you test Positive for Covid</h5>
+             <div class="form-check form-check-inline mb-3">
+                <input name="covidePositive" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="<%= content.test %>">
+                <label class="form-check-label" for="inlineRadio1">YES</label>
+              </div>
+              <div class="form-check form-check-inline mb-3">
+                <input name="covidePositive" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="<%= content.test%>">
+                <label class="form-check-label" for="inlineRadio2">NO</label>
+              </div> <br>
+
+              <h5>Are you Vaccinated ?</h5>
+              <h6> 1st Dose :</h6>
+              <div class="form-check form-check-inline mb-3 ">
+                 <input name="dose1" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="<%= content.Dose1 %>">
+                 <label class="form-check-label" for="inlineRadio1">YES</label>
+               </div>
+               <div class="form-check form-check-inline mb-3">
+                 <input name="dose1" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="<%= content.Dose1 %>">
+                 <label class="form-check-label" for="inlineRadio2">NO</label>
+               </div>
+
+               <h6> 2nd Dose :</h6>
+              <div class="form-check form-check-inline mb-3">
+                 <input name="dose2" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="<%= content.Dose2 %>">
+                 <label class="form-check-label" for="inlineRadio1">YES</label>
+               </div>
+               <div class="form-check form-check-inline mb-3">
+                 <input name="dose2" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="<%= content.Dose2 %>">
+                 <label class="form-check-label" for="inlineRadio2">NO</label>
+               </div> <br>
+               
+               <div class="form-floating mb-3">
+                <textarea name="details" class="form-control" placeholder="Any Details you want to give" id="floatingTextarea"><%= content.details %></textarea>
+                <label for="floatingTextarea">Details</label>
+              </div>
+
+
+            <input type="submit" value="submit">
+        </form>
+
+      </div>
+    </section><!-- End Service Details Section -->
+
+    
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+    <div class="footer-top ">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Survey Form</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-info">
+            <h3>About Moderna</h3>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Moderna</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="../vendor/aos/aos.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../vendor/glightbox/js/glightbox.min.js"></script>
+<script src="../vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="../vendor/php-email-form/validate.js"></script>
+<script src="../vendor/purecounter/purecounter.js"></script>
+<script src="../vendor/swiper/swiper-bundle.min.js"></script>
+<script src="../vendor/waypoints/noframework.waypoints.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../js/main.js"></script>
+  <script type="text/javascript">
+    function myFunction(){
+      div1 = document.getElementById('theDIV1');
+      div2 = document.getElementById('theDIV2');
+      div3 = document.getElementById('theDIV3');
+      div4 = document.getElementById('theDIV4');
+      
+      if (document.getElementById('covidePositive').checked) {
+        x = document.getElementById('covidePositive').value;
+      }else if(document.getElementById('covidePositive2').checked){
+        x = document.getElementById('covidePositive2').value;
+      }
+      if (x === "Yes") {
+        div1.style.display = "block";
+        div2.style.display = "block";
+        div3.style.display = "block";
+        div4.style.display = "block";
+        
+      } else if(x === "No"){
+        div1.style.display = "none";
+        div2.style.display = "none";
+        div3.style.display = "none";
+        div4.style.display = "none";
+      }
+    }   
+  </script>
+
+</body>
+</html>
